@@ -1,12 +1,11 @@
-site_name: C++Tutorial
+site_name: SemanticWeb
 site_author: "Vu Anh"
 google_analytics: ["UA-68978617-1", "magizbox.com"]
 
 pages:
-- "Home": 'index.md'
+- "Home": "index.md"
 - "Docs":
-  - "Introduction": "introduction.md"
-  - "Create Unit Test in Visual Studio 2013": "unittest_vs.md"
+  - "Web 3.0": "web_3_0.md"
 
 markdown_extensions:
     - footnotes

@@ -1,16 +1,25 @@
-# C/C++
+# Semantic Web
 
-C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation.
+The Semantic Web is an extension of the Web through standards by the World Wide Web Consortium (W3C). The standards promote common data formats and exchange protocols on the Web, most fundamentally the Resource Description Framework (RDF).
 
-It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights. C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications, including desktop applications, servers (e.g. e-commerce, web search or SQL servers), and performance-critical applications (e.g. telephone switches or space probes). C++ is a compiled language, with implementations of it available on many platforms and provided by various organizations, including the Free Software Foundation (FSF's GCC), LLVM, Microsoft, Intel and IBM.
-
-C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2014 as ISO/IEC 14882:2014 (informally known as C++14).The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, ISO/IEC 14882:2003, standard. The current C++14 standard supersedes these and C++11, with new features and an enlarged standard library. Before the initial standardization in 1998, C++ was developed by **Bjarne Stroustrup** at Bell Labs since 1979, as an extension of the C language as he wanted an efficient and flexible language similar to C, which also provided high-level features for program organization.
+According to the W3C, "The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries". The term was coined by Tim Berners-Lee for a web of data that can be processed by machines. While its critics have questioned its feasibility, proponents argue that applications in industry, biology and human sciences research have already proven the validity of the original concept.
 
 ## Books
 
-<div class="books" gid="1FyrGyloGfUENAmnI900CagAkyyLOn0O0zANMvIupZsw"></div>
+<div class="books" gid="1ZlY7m7C6XvpKi-LaUtgcfjv6UCs8PUjPhk5yJKcePBU"></div>
 <div class="clearfix"></div>
 
 ## Courses
 
-<div class="courses" gid="1p7obM17WwN32_0jH9-QFsqjCfw4CvQ38l03-WaMUE_s"></div>
+<div class="courses" gid="13tUVgwzjm23LEqzttKZ70zUEBxm_0sUDIPRx3w0WwXE"></div>
+<div class="clearfix"></div>
+
+## Videos
+
+<div class="videos" gid="1R0fS0cWFF6kLAz0awlK94wwaCyi5EfOKu7w-lcBkvwE"></div>
+<div class="clearfix"></div>
+
+## Papers
+
+<div class="papers" gid="1GSyet5nSDTi2Pg_JkL_kZhgXkhfAGc4pu8EX1DlSrZ4"></div>
+<div class="clearfix"></div>
