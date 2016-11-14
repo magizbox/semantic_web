@@ -3,9 +3,12 @@ site_author: "Vu Anh"
 google_analytics: ["UA-68978617-1", "magizbox.com"]
 
 pages:
-- "Home": "index.md"
-- "Docs":
+- "<span class='fa fa-home'></span> Home": "index.md"
+- "<span class='fa fa-book'></span> Learn":
   - "Web 3.0": "web_3_0.md"
+  - "RDF": "rdf.md"
+  - "SPARQL": "sparql.md"
+- "<span class='fa fa-question-circle'></span> Ask": "ask.md"
 
 markdown_extensions:
     - footnotes

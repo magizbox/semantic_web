@@ -1,0 +1,5 @@
+PREFIX schema: <http://schema.org/>
+SELECT ?a ?b ?c
+WHERE {
+  ?a rdf:type schema:Place .
+}

@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Web 3.0 - SemanticWeb</title>
+	<title>SPARQL - SemanticWeb</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -79,8 +79,8 @@
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Web 3.0</a>
+<li >
+    <a href="../web_3_0/">Web 3.0</a>
 </li>
 
                         
@@ -91,8 +91,8 @@
 
                         
                             
-<li >
-    <a href="../sparql/">SPARQL</a>
+<li class="active">
+    <a href="./">SPARQL</a>
 </li>
 
                         
@@ -117,12 +117,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../rdf/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../rdf/">
+                        <a rel="prev" href="../ask/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -138,18 +138,134 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#web-30">Web 3.0</a></li>
+        <li class="main active"><a href="#sparql">SPARQL</a></li>
+        
+            <li><a href="#a-sparql-query">A SPARQL query</a></li>
+        
+            <li><a href="#anatomy-of-a-query">Anatomy of a query</a></li>
+        
+            <li><a href="#offline-query-example">Offline query example</a></li>
+        
+            <li><a href="#online-query-example">Online query example</a></li>
+        
+            <li><a href="#query-in-dbpediaorg">Query in dbpedia.org</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="web-30">Web 3.0</h1>
-<p>Tim Berners-Lee has described the semantic web as a component of "Web 3.0".</p>
-<p>People keep asking what Web 3.0 is. I think maybe when you've got an overlay of scalable vector graphics – everything rippling and folding and looking misty – on Web 2.0 and access to a semantic Web integrated across a huge space of data, you'll have access to an unbelievable data resource …</p>
-<p>— Tim Berners-Lee, 2006</p>
-<p>"Semantic Web" is sometimes used as a synonym for "Web 3.0", though the definition of each term varies.</p></div>
+<h1 id="sparql">SPARQL</h1>
+<p>SPARQL (pronounced "sparkle", a recursive acronym for SPARQL Protocol and RDF Query Language) is an RDF query language, that is, a semantic query language for databases, able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a standard by the RDF Data Access Working Group (DAWG) of the World Wide Web Consortium, and is recognized as one of the key technologies of the semantic web. On 15 January 2008, SPARQL 1.0 became an official W3C Recommendation, and SPARQL 1.1 in March, 2013.</p>
+<p><img alt="" src="../images/1.png" /></p>
+<p>SPARQL allows for a query to consist of triple patterns, conjunctions, disjunctions, and optional patterns.</p>
+<h2 id="a-sparql-query">A SPARQL query</h2>
+<p><img alt="" src="../images/2.png" /></p>
+<h2 id="anatomy-of-a-query">Anatomy of a query</h2>
+<p><img alt="" src="../images/3.jpg" /></p>
+<p>SPARQL has four query forms. These query forms use the solutions from pattern matching to form result sets or RDF graphs. The query forms are:</p>
+<ul>
+<li><strong>SELECT</strong><ul>
+<li>Returns all, or a subset of, the variables bound in a query pattern match.</li>
+</ul>
+</li>
+<li><strong>CONSTRUCT</strong><ul>
+<li>Returns an RDF graph constructed by substituting variables in a set of triple templates.</li>
+</ul>
+</li>
+<li><strong>ASK</strong><ul>
+<li>Returns a boolean indicating whether a query pattern matches or not.</li>
+</ul>
+</li>
+<li><strong>DESCRIBE</strong><ul>
+<li>Returns an RDF graph that describes the resources found.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+<ul class="nav nav-tabs">
+<li class="active"><a href="#ex1tab1" data-toggle="tab">Query</a></li>
+<li><a href="#ex1tab2" data-toggle="tab">Result</a></li>
+<li><a href="#ex1tab3" data-toggle="tab">Data</a></li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="ex1tab1">
+<pre>
+# filename: ex008.rq
+&nbsp;
+PREFIX ab: &lt;http://learningsparql.com/ns/addressbook#&gt;
+&nbsp;
+SELECT ?person
+WHERE
+{ ?person ab:homeTel &quot;(229) 276-5135&quot;}
+</pre>
+</div> <!-- end tab 1 -->
+
+<div class="tab-pane" id="ex1tab2">
+<pre>
+person
+http://learningsparql.com/ns/addressbook#richard
+</pre>
+</div> <!-- end tab 2 -->
+
+<div class="tab-pane" id="ex1tab3">
+<pre>
+# filename: ex012.ttl
+&nbsp;
+@prefix ab: &lt;http://learningsparql.com/ns/addressbook#&gt; .
+@prefix d:  &lt;http://learningsparql.com/ns/data#&gt; .
+&nbsp;
+d:i0432 ab:firstName &quot;Richard&quot; .
+d:i0432 ab:lastName  &quot;Mutt&quot; .
+d:i0432 ab:homeTel   &quot;(229) 276-5135&quot; .
+d:i0432 ab:email     &quot;richard49@hotmail.com&quot; .
+&nbsp;
+d:i9771 ab:firstName &quot;Cindy&quot; .
+d:i9771 ab:lastName  &quot;Marshall&quot; .
+d:i9771 ab:homeTel   &quot;(245) 646-5488&quot; .
+d:i9771 ab:email     &quot;cindym@gmail.com&quot; .
+&nbsp;
+d:i8301 ab:firstName &quot;Craig&quot; .
+d:i8301 ab:lastName  &quot;Ellis&quot; .
+d:i8301 ab:email     &quot;craigellis@yahoo.com&quot; .
+d:i8301 ab:email     &quot;c.ellis@usairwaysgroup.com&quot; .
+</pre>
+</div> <!-- end tab 3 -->
+
+</div>
+
+</div>
+
+<h2 id="offline-query-example">Offline query example</h2>
+<pre><code># GET CRAIG EMAILS
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX : &lt;http://www.semanticweb.org/lananh/ontologies/2016/10/untitled-ontology-3#&gt;
+
+SELECT ?craigEmail
+WHERE
+{ :craig :email ?craigEmail . }
+</code></pre>
+
+<h2 id="online-query-example">Online query example</h2>
+<pre><code>PREFIX ab: &lt;http://learningsparql.com/ns/addressbook#&gt;
+
+SELECT ?craigEmail
+WHERE
+{ ab:craig ab:email ?craigEmail . }
+</code></pre>
+
+<h2 id="query-in-dbpediaorg">Query in dbpedia.org</h2>
+<p><a href="http://dbpedia.org/snorql/?query=SELECT+*+WHERE+%7B%0D%0A+%3Fa+%3Fb+%3Fc+.%0D%0A%7D+LIMIT+20">Example</a></p>
+<pre><code>SELECT * WHERE {
+ ?a ?b ?c .
+} LIMIT 20
+</code></pre></div>
             
         </div>
 

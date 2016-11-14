@@ -17,6 +17,26 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/rdf/</loc>
+     <lastmod>2016-11-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/sparql/</loc>
+     <lastmod>2016-11-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/ask/</loc>
+     <lastmod>2016-11-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>

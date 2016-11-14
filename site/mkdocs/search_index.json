@@ -3,7 +3,7 @@
         {
             "location": "/", 
             "text": "Semantic Web\n\n\nThe Semantic Web is an extension of the Web through standards by the World Wide Web Consortium (W3C). The standards promote common data formats and exchange protocols on the Web, most fundamentally the Resource Description Framework (RDF).\n\n\nAccording to the W3C, \"The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries\". The term was coined by Tim Berners-Lee for a web of data that can be processed by machines. While its critics have questioned its feasibility, proponents argue that applications in industry, biology and human sciences research have already proven the validity of the original concept.\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nPapers", 
-            "title": "Home"
+            "title": "<span class='fa fa-home'></span> Home"
         }, 
         {
             "location": "/#semantic-web", 
@@ -39,6 +39,71 @@
             "location": "/web_3_0/#web-30", 
             "text": "Tim Berners-Lee has described the semantic web as a component of \"Web 3.0\".  People keep asking what Web 3.0 is. I think maybe when you've got an overlay of scalable vector graphics \u2013 everything rippling and folding and looking misty \u2013 on Web 2.0 and access to a semantic Web integrated across a huge space of data, you'll have access to an unbelievable data resource \u2026  \u2014\u2009Tim Berners-Lee, 2006  \"Semantic Web\" is sometimes used as a synonym for \"Web 3.0\", though the definition of each term varies.", 
             "title": "Web 3.0"
+        }, 
+        {
+            "location": "/rdf/", 
+            "text": "RDF\n\n\n \n\n  \n\n    \nSection 1\n\n    \nSection 2\n\n  \n\n  \n\n    \n\n      \nI'm in Section 1.\n\n    \n\n    \n\n      \nHowdy, I'm in Section 2.", 
+            "title": "RDF"
+        }, 
+        {
+            "location": "/rdf/#rdf", 
+            "text": "Section 1 \n     Section 2 \n   \n   \n     \n       I'm in Section 1. \n     \n     \n       Howdy, I'm in Section 2.", 
+            "title": "RDF"
+        }, 
+        {
+            "location": "/sparql/", 
+            "text": "SPARQL\n\n\nSPARQL (pronounced \"sparkle\", a recursive acronym for SPARQL Protocol and RDF Query Language) is an RDF query language, that is, a semantic query language for databases, able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a standard by the RDF Data Access Working Group (DAWG) of the World Wide Web Consortium, and is recognized as one of the key technologies of the semantic web. On 15 January 2008, SPARQL 1.0 became an official W3C Recommendation, and SPARQL 1.1 in March, 2013.\n\n\n\n\nSPARQL allows for a query to consist of triple patterns, conjunctions, disjunctions, and optional patterns.\n\n\nA SPARQL query\n\n\n\n\nAnatomy of a query\n\n\n\n\nSPARQL has four query forms. These query forms use the solutions from pattern matching to form result sets or RDF graphs. The query forms are:\n\n\n\n\nSELECT\n\n\nReturns all, or a subset of, the variables bound in a query pattern match.\n\n\n\n\n\n\nCONSTRUCT\n\n\nReturns an RDF graph constructed by substituting variables in a set of triple templates.\n\n\n\n\n\n\nASK\n\n\nReturns a boolean indicating whether a query pattern matches or not.\n\n\n\n\n\n\nDESCRIBE\n\n\nReturns an RDF graph that describes the resources found.\n\n\n\n\n\n\n\n\nExample\n\n\n \n\n\n\n\nQuery\n\n\nResult\n\n\nData\n\n\n\n\n\n\n\n\n\n\n\n# filename: ex008.rq\n\n\nPREFIX ab: \nhttp://learningsparql.com/ns/addressbook#\n\n\n\nSELECT ?person\nWHERE\n{ ?person ab:homeTel \n(229) 276-5135\n}\n\n\n\n \n\n\n\n\n\n\nperson\nhttp://learningsparql.com/ns/addressbook#richard\n\n\n\n \n\n\n\n\n\n\n# filename: ex012.ttl\n\n\n@prefix ab: \nhttp://learningsparql.com/ns/addressbook#\n .\n@prefix d:  \nhttp://learningsparql.com/ns/data#\n .\n\n\nd:i0432 ab:firstName \nRichard\n .\nd:i0432 ab:lastName  \nMutt\n .\nd:i0432 ab:homeTel   \n(229) 276-5135\n .\nd:i0432 ab:email     \nrichard49@hotmail.com\n .\n\n\nd:i9771 ab:firstName \nCindy\n .\nd:i9771 ab:lastName  \nMarshall\n .\nd:i9771 ab:homeTel   \n(245) 646-5488\n .\nd:i9771 ab:email     \ncindym@gmail.com\n .\n\n\nd:i8301 ab:firstName \nCraig\n .\nd:i8301 ab:lastName  \nEllis\n .\nd:i8301 ab:email     \ncraigellis@yahoo.com\n .\nd:i8301 ab:email     \nc.ellis@usairwaysgroup.com\n .\n\n\n\n \n\n\n\n\n\n\n\n\n\nOffline query example\n\n\n# GET CRAIG EMAILS\nPREFIX rdf: \nhttp://www.w3.org/1999/02/22-rdf-syntax-ns#\n\nPREFIX owl: \nhttp://www.w3.org/2002/07/owl#\n\nPREFIX xsd: \nhttp://www.w3.org/2001/XMLSchema#\n\nPREFIX rdfs: \nhttp://www.w3.org/2000/01/rdf-schema#\n\nPREFIX : \nhttp://www.semanticweb.org/lananh/ontologies/2016/10/untitled-ontology-3#\n\n\nSELECT ?craigEmail\nWHERE\n{ :craig :email ?craigEmail . }\n\n\n\n\nOnline query example\n\n\nPREFIX ab: \nhttp://learningsparql.com/ns/addressbook#\n\n\nSELECT ?craigEmail\nWHERE\n{ ab:craig ab:email ?craigEmail . }\n\n\n\n\nQuery in dbpedia.org\n\n\nExample\n\n\nSELECT * WHERE {\n ?a ?b ?c .\n} LIMIT 20", 
+            "title": "SPARQL"
+        }, 
+        {
+            "location": "/sparql/#sparql", 
+            "text": "SPARQL (pronounced \"sparkle\", a recursive acronym for SPARQL Protocol and RDF Query Language) is an RDF query language, that is, a semantic query language for databases, able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a standard by the RDF Data Access Working Group (DAWG) of the World Wide Web Consortium, and is recognized as one of the key technologies of the semantic web. On 15 January 2008, SPARQL 1.0 became an official W3C Recommendation, and SPARQL 1.1 in March, 2013.   SPARQL allows for a query to consist of triple patterns, conjunctions, disjunctions, and optional patterns.", 
+            "title": "SPARQL"
+        }, 
+        {
+            "location": "/sparql/#a-sparql-query", 
+            "text": "", 
+            "title": "A SPARQL query"
+        }, 
+        {
+            "location": "/sparql/#anatomy-of-a-query", 
+            "text": "SPARQL has four query forms. These query forms use the solutions from pattern matching to form result sets or RDF graphs. The query forms are:   SELECT  Returns all, or a subset of, the variables bound in a query pattern match.    CONSTRUCT  Returns an RDF graph constructed by substituting variables in a set of triple templates.    ASK  Returns a boolean indicating whether a query pattern matches or not.    DESCRIBE  Returns an RDF graph that describes the resources found.     Example      Query  Result  Data     \n# filename: ex008.rq \nPREFIX ab:  http://learningsparql.com/ns/addressbook#  \nSELECT ?person\nWHERE\n{ ?person ab:homeTel  (229) 276-5135 }      \nperson\nhttp://learningsparql.com/ns/addressbook#richard      \n# filename: ex012.ttl \n@prefix ab:  http://learningsparql.com/ns/addressbook#  .\n@prefix d:   http://learningsparql.com/ns/data#  . \nd:i0432 ab:firstName  Richard  .\nd:i0432 ab:lastName   Mutt  .\nd:i0432 ab:homeTel    (229) 276-5135  .\nd:i0432 ab:email      richard49@hotmail.com  . \nd:i9771 ab:firstName  Cindy  .\nd:i9771 ab:lastName   Marshall  .\nd:i9771 ab:homeTel    (245) 646-5488  .\nd:i9771 ab:email      cindym@gmail.com  . \nd:i8301 ab:firstName  Craig  .\nd:i8301 ab:lastName   Ellis  .\nd:i8301 ab:email      craigellis@yahoo.com  .\nd:i8301 ab:email      c.ellis@usairwaysgroup.com  .", 
+            "title": "Anatomy of a query"
+        }, 
+        {
+            "location": "/sparql/#offline-query-example", 
+            "text": "# GET CRAIG EMAILS\nPREFIX rdf:  http://www.w3.org/1999/02/22-rdf-syntax-ns# \nPREFIX owl:  http://www.w3.org/2002/07/owl# \nPREFIX xsd:  http://www.w3.org/2001/XMLSchema# \nPREFIX rdfs:  http://www.w3.org/2000/01/rdf-schema# \nPREFIX :  http://www.semanticweb.org/lananh/ontologies/2016/10/untitled-ontology-3# \n\nSELECT ?craigEmail\nWHERE\n{ :craig :email ?craigEmail . }", 
+            "title": "Offline query example"
+        }, 
+        {
+            "location": "/sparql/#online-query-example", 
+            "text": "PREFIX ab:  http://learningsparql.com/ns/addressbook# \n\nSELECT ?craigEmail\nWHERE\n{ ab:craig ab:email ?craigEmail . }", 
+            "title": "Online query example"
+        }, 
+        {
+            "location": "/sparql/#query-in-dbpediaorg", 
+            "text": "Example  SELECT * WHERE {\n ?a ?b ?c .\n} LIMIT 20", 
+            "title": "Query in dbpedia.org"
+        }, 
+        {
+            "location": "/ask/", 
+            "text": "Getting help with Semantic Web\n\n\nWe are always happy to help you get your Semantic Web project going!\n\n\nSemantic Web has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.\n\n\n\n\n\n    Ask Semantic Web Question \n\n\n\n\n\n\nOther resources\n\n\nThere are curated collections of semantic web questions on StackOverflow.\n\n\nHow to ask a good question\n\n\nAsking good questions is \nthe best way to get good answers\n. Try to follow these tips:\n\n\n\n\nMake the question precise and specific. \n\"My code doesn't work\"\n, for example, does not help us to help you as much as \n\"This following code me an answer I didn't expect\"\n.\n\n\nShow that you've \ntried to solve the problem yourself\n. Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely: \n\"Here's the code I tried...\"\n or \n\"I read in the documentation that ...\"\n shows that you've at least made some effort to find things out for yourself.\n\n\nWhere appropriate \nshow a complete test case\n. Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case. \nInclude enough data\n - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!\n\n\nDon't re-post your question after only a few hours\n. People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.\n\n\nAdding lots of exclamation marks or other punctuation\n will \nnot\n move your question up the queue. Quite the reverse, in fact.\n\n\nAsk questions \non the list, rather than emailing the developers directly\n. This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
+            "title": "<span class='fa fa-question-circle'></span> Ask"
+        }, 
+        {
+            "location": "/ask/#getting-help-with-semantic-web", 
+            "text": "We are always happy to help you get your Semantic Web project going!  Semantic Web has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.   \n    Ask Semantic Web Question", 
+            "title": "Getting help with Semantic Web"
+        }, 
+        {
+            "location": "/ask/#other-resources", 
+            "text": "There are curated collections of semantic web questions on StackOverflow.", 
+            "title": "Other resources"
+        }, 
+        {
+            "location": "/ask/#how-to-ask-a-good-question", 
+            "text": "Asking good questions is  the best way to get good answers . Try to follow these tips:   Make the question precise and specific.  \"My code doesn't work\" , for example, does not help us to help you as much as  \"This following code me an answer I didn't expect\" .  Show that you've  tried to solve the problem yourself . Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely:  \"Here's the code I tried...\"  or  \"I read in the documentation that ...\"  shows that you've at least made some effort to find things out for yourself.  Where appropriate  show a complete test case . Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case.  Include enough data  - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!  Don't re-post your question after only a few hours . People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.  Adding lots of exclamation marks or other punctuation  will  not  move your question up the queue. Quite the reverse, in fact.  Ask questions  on the list, rather than emailing the developers directly . This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
+            "title": "How to ask a good question"
         }
     ]
 }
